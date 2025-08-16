@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Compte à rebours</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f0f8ff;
+      margin-top: 20%;
+    }
+    h1 {
+      color: #333;
+    }
+    #compteur {
+      font-size: 2em;
+      color: #0077cc;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Compte à rebours vers le 29 juillet 2026</h1>
+  <div id="compteur"></div>  <script>
+    function mettreAJourCompteur() {
+      const maintenant = new Date().getTime();
+      const cible = new Date("2026-07-29T00:00:00").getTime();
+
+      const diff = cible - maintenant;
+
+      if (diff <= 0) {
+        document.getElementById("compteur").textContent = "La date est atteinte 🎉";
+        clearInterval(interval);
+        return;
+      }
+
+      const jours = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const heures = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const secondes = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById("compteur").textContent =
+        jours + " j " + heures + " h " + minutes + " m " + secondes + " s";
+    }
+
+    const interval = setInterval(mettreAJourCompteur, 1000);
+    mettreAJourCompteur();
+  </script></body>
+</html>
