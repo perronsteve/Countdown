@@ -1,7 +1,10 @@
-<!DOCTYPE html><html lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <title>Compte à rebours</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="manifest" href="manifest.json">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -21,7 +24,9 @@
 </head>
 <body>
   <h1>Compte à rebours vers le 29 juillet 2026</h1>
-  <div id="compteur"></div>  <script>
+  <div id="compteur"></div>
+
+  <script>
     function mettreAJourCompteur() {
       const maintenant = new Date().getTime();
       const cible = new Date("2026-07-29T00:00:00").getTime();
@@ -45,5 +50,6 @@
 
     const interval = setInterval(mettreAJourCompteur, 1000);
     mettreAJourCompteur();
-  </script></body>
+  </script>
+</body>
 </html>
