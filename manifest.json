@@ -1,0 +1,15 @@
+{
+  "name": "Compte à rebours",
+  "short_name": "Rebours 2026",
+  "start_url": "compteur.html",
+  "display": "standalone",
+  "background_color": "#f0f8ff",
+  "theme_color": "#0077cc",
+  "icons": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/6/6b/Clock_icon.svg",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
